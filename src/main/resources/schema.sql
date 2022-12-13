@@ -28,3 +28,23 @@ insert into employee(firstname,lastname,position,age) values ('Herbert', 'Karner
 insert into employee(firstname,lastname,position,age) values ('Norbert', 'Neumann', 'IT-Spezialist', 36);
 insert into employee(firstname,lastname,position,age) values ('Maria', 'Lechner', 'Verkaufsleiterin', 48);
 insert into employee(firstname,lastname,position,age) values ('Helena', 'Porsa', 'Verkäuferin', 61);
+
+create table employeeclient(
+    employeeId int ,
+    clientId int,
+    PRIMARY KEY(employeeId,clientId),
+    FOREIGN KEY (employeeId) REFERENCES employee(id),
+    FOREIGN KEY (clientId) REFERENCES client(id)
+);
+
+insert into employeeclient(employeeId, clientId) values (1,1);
+insert into employeeclient(employeeId, clientId) values (1,4);
+insert into employeeclient(employeeId, clientId) values (1,5);
+insert into employeeclient(employeeId, clientId) values (2,1);
+insert into employeeclient(employeeId, clientId) values (2,3);
+insert into employeeclient(employeeId, clientId) values (2,4);
+insert into employeeclient(employeeId, clientId) values (3,1);
+insert into employeeclient(employeeId, clientId) values (4,1);
+insert into employeeclient(employeeId, clientId) values (4,2);
+insert into employeeclient(employeeId, clientId) values (4,3);
+insert into employeeclient(employeeId, clientId) values (4,4);
